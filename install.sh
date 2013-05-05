@@ -20,8 +20,8 @@ done
 
 for b in makefile shared.py; do
     ln -s "$BNAME"/"$b" "$b"
-    echo "ADDED SYMLINK: $b"
+    echo "ADDED SYMLINK: $b -> $BNAME/$b"
 done
 
-echo "INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES WITH `git add`"
+echo 'INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES WITH: `git add`'
 exit 0
