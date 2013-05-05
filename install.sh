@@ -5,10 +5,10 @@
 set -u # error on undefined variable
 set -e # stop execution if one command returns != 0
 
-BNAME="$( basename "$( pwd )" )"
+cp -r "in" ..
+cp params.py ..
 cd ..
-mv "in" ..
-mv params.py ..
+BNAME="$( basename "$( pwd )" )"
 for b in makefile shared.py; do
     ln -s "$BNAME"/"$b" "$b"
     git add "$b"
