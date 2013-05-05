@@ -18,8 +18,16 @@ next you can install as:
 
 finnally try it out:
 
-    cd ../..
+    cd ..
     make
+
+you should see how this generated the following plot:
+    
+    media-gen/out/sample.png
+
+which corresponds to the file:
+
+    media-gen/matplotlib/in/sample.py
 
 # usage
 
