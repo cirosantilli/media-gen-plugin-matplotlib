@@ -9,7 +9,19 @@ BNAME="$( basename "$( pwd )" )"
 cp -r "in" ..
 cp params.py ..
 cd ..
+
+fs=( makefile shared.py )
+for f in "${fs[@]}"; do
+    if [ -e "$f" ]; then
+        echo "FILE ALREADY EXISTS. INSTALLATION ABORTED: $f"
+        exit 1
+    fi
+done
+
 for b in makefile shared.py; do
     ln -s "$BNAME"/"$b" "$b"
     echo "ADDED SYMLINK: $b"
 done
+
+echo "INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES WITH `git add`"
+exit 0
