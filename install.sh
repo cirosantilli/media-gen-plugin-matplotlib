@@ -23,5 +23,5 @@ for b in makefile shared.py; do
     echo "ADDED SYMLINK: $b -> $BNAME/$b"
 done
 
-echo 'INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES WITH: `git add`'
+echo 'INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES TO PROJECT WITH: `git add`'
 exit 0
