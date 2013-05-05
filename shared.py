@@ -55,5 +55,5 @@ if __name__ == '__main__':
         print "path: " + path
         raise
     else:
-        out_path_noext = os.path.join( path_head, name + '.' ) 
+        out_path_noext = os.path.join( os.path.dirname( os.getcwd() ), out_dir, name + '.' ) 
         plotter.plot( plt, out_path_noext, params )
