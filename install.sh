@@ -6,8 +6,6 @@ set -u # error on undefined variable
 set -e # stop execution if one command returns != 0
 
 BNAME="$( basename "$( pwd )" )"
-cp -r "in" ..
-cp params.py ..
 cd ..
 
 fs=( makefile shared.py )
@@ -18,9 +16,10 @@ for f in "${fs[@]}"; do
     fi
 done
 
+cp -r "in" ..
+cp params.py ..
 for b in makefile shared.py; do
     ln -s "$BNAME"/"$b" "$b"
-    echo "ADDED SYMLINK: $b -> $BNAME/$b"
 done
 
 echo 'INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES TO PROJECT WITH: `git add`'
