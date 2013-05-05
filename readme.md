@@ -1,17 +1,25 @@
 a media-gen-plugin as defined in https://github.com/cirosantilli/latex-template/tree/1.1/media-gen#media-gen-plugin
-to automate the creation of python matplotlib plots for usage in latex projects
+
+automates the creation of python matplotlib plots for usage in book projects (latex, html, etc) projects
+
+you can use it with the template present in https://github.com/cirosantilli/latex-template/
 
 # install
 
-    #name of the subdir of media-gen in which to install
-    DIRNAME=matplotlib
+to see how this works, you can start with the template:
+
+    git clone --recursive https://github.com/cirosantilli/latex-template/
+    cd latex-template
+
+next you can install as:
 
     cd media-gen
-    mkdir "$DIRNAME"
-    cd "$DIRNAME"
-    git clone https://github.com/cirosantilli/media-gen-plugin-matplotlib.git shared
-    cd shared
-    ./intall.sh
+    ./install.sh "cirosantilli/media-gen-plugin-matplotlib"
+
+finnally try it out:
+
+    cd ../..
+    make
 
 # usage
 
