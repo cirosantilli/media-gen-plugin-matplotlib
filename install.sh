@@ -11,5 +11,5 @@ cp params.py ..
 cd ..
 for b in makefile shared.py; do
     ln -s "$BNAME"/"$b" "$b"
-    git add "$b"
+    echo "ADDED SYMLINK: $b"
 done
