@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 
 import params
 
-out_dir = os.path.join( os.path.dirname( os.getcwd() ), "out" )
+out_dir = "out"
 
 def plot( plt, out_path_noext, params ):
     """plot on an empty plt object and save the figure
@@ -55,5 +55,5 @@ if __name__ == '__main__':
         print "path: " + path
         raise
     else:
-        out_path_noext = os.path.join( os.path.dirname( os.getcwd() ), out_dir, name + '.' ) 
+        out_path_noext = os.path.join( out_dir, name + '.' ) 
         plotter.plot( plt, out_path_noext, params )

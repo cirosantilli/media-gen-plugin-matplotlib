@@ -8,7 +8,7 @@ override ID 		?=
 override IN_EXT 	?= .py
 override OUT_EXT 	?= .png
 override IN_DIR 	?= in/
-override OUT_DIR 	?= ../out/
+override OUT_DIR 	?= out/
 override RUN_NOEXT 	?= a 			#basename without extension of file to view (with firefox, okular, etc.)
 
 ERASE_MSG := 'DONT PUT ANYTHING IMPORTANT IN THOSE DIRECTORIES SINCE `make clean` ERASES THEM!!!'
@@ -25,9 +25,13 @@ all: mkdir $(OUTS)
 	@echo $(ERASE_MSG)
 
 $(OUT_DIR)%$(OUT_EXT): $(IN_DIR)%$(IN_EXT) shared.py
-	$(CC) $< $(FLAGS) 
+	$(CC) $< $(FLAGS)
 
 clean:
 	rm -r "$(OUT_DIR)"
 	@echo "REMOVED DIRS: $(OUT_DIR)"
+	@echo $(ERASE_MSG)
+
+mkdir:
+	mkdir -p "$(OUT_DIR)"
 	@echo $(ERASE_MSG)
