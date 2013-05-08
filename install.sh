@@ -7,10 +7,10 @@ set -e # stop execution if one command returns != 0
 
 BNAME="$( basename "$( pwd )" )"
 
-fs=( makefile shared.py )
-for f in "${fs[@]}"; do
-    if [ -e ../"$f" ]; then
-        echo "FILE ALREADY EXISTS. INSTALLATION ABORTED: $f"
+FS=( makefile .gitignore shared.py )
+for F in "${FS[@]}"; do
+    if [ -e ../"$F" ]; then
+        echo "FILE ALREADY EXISTS. INSTALLATION ABORTED: $F"
         exit 1
     fi
 done
@@ -18,8 +18,8 @@ done
 cp -r "in" ..
 cp params.py ..
 cd ..
-for b in makefile shared.py; do
-    ln -s "$BNAME"/"$b" "$b"
+for B in "${FS[@]}"; do
+    ln -s "$BNAME"/"$B" "$B"
 done
 
 echo 'INSTALLATION FINISHED. CONSIDER ADDING GENERATED FILES TO PROJECT WITH: `git add`'

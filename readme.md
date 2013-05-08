@@ -1,9 +1,7 @@
 automates the creation of python matplotlib plots for usage in book projects (latex, html, etc) projects
 
-# install with media gen
-
-this is a media-gen-plugin as defined in https://github.com/cirosantilli/media-gen/tree/1.0/readme.md#known-stable-media-gen-plugins
-and it is suggested that you install this with media-gen as explained in the media-gen page.
+follows the media-gen-plugin interface defined in https://github.com/cirosantilli/media-gen/tree/1.1/readme.md#media-gen-plugin
+see that page for installation and usage instructions.
 
 # usage
 
