@@ -1,0 +1,11 @@
+#this is a template if you want to hook more complex make
+#rules into your project (for example one file generates two images).
+
+#It is run after the main shared makefile. If you don't want to use
+#this file, just remove it.
+
+.PHONY: all
+
+all:
+	@echo makefile-local
+	@echo IN_DIR = $(IN_DIR)

@@ -7,18 +7,25 @@ set -e # stop execution if one command returns != 0
 
 BNAME="$( basename "$( pwd )" )"
 
-FS=( makefile .gitignore shared.py )
-for F in "${FS[@]}"; do
+#shared files that will be linked from main repo into the subrepo:
+FS_LN=( makefile .gitignore shared.py )
+
+#templates that will be copied into parent dir:
+FS_CP=( in makefile-local params.py )
+
+for F in "${FS_LN[@]}" "${FS_CP[@]}"; do
     if [ -e ../"$F" ]; then
         echo "FILE ALREADY EXISTS. INSTALLATION ABORTED: $F"
         exit 1
     fi
 done
 
-cp -r "in" ..
-cp params.py ..
+for F in "${FS_CP[@]}"; do
+    cp -r "$F" ..
+done
+
 cd ..
-for B in "${FS[@]}"; do
+for B in "${FS_LN[@]}"; do
     ln -s "$BNAME"/"$B" "$B"
 done
 
